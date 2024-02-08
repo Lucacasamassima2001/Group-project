@@ -1,0 +1,27 @@
+.content {
+  margin-top: 20rem;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.no__project {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  font-size: 1.5rem;
+}
+
+.no__project > img {
+  height: 10rem;
+}
+
+.no__project > h2 {
+  color: #706a66;
+}
+
+.no__project > h3 {
+  color: #c1b1a6;
+}

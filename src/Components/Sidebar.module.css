@@ -1,0 +1,14 @@
+.sidebar {
+  background-color: #202020;
+  margin-top: 2.5rem;
+  width: 20%;
+  height: 100%;
+  border-top-right-radius: 1.5rem;
+}
+
+.sidebar h2 {
+  margin-top: 2rem;
+  padding: 2rem;
+  color: white;
+  text-transform: uppercase;
+}
