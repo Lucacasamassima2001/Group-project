@@ -1,5 +1,6 @@
 import Button from "./Button";
 import classes from "./Content.module.css";
+import Form from "./Form";
 export default function Content() {
   return (
     <>
@@ -9,6 +10,9 @@ export default function Content() {
           <h2>No projects selected</h2>
           <h3>Select a project or get started with a new one</h3>
           <Button />
+        </div>
+        <div>
+          <Form />
         </div>
       </div>
     </>
