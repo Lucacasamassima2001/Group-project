@@ -1,0 +1,29 @@
+.styled__input {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.styled__input > label {
+  color: #4c4845;
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+
+.styled__input > input {
+  font-size: 1.3rem;
+  padding: 0.5rem;
+  height: 3rem;
+  color: #43403e;
+  background-color: #d9d0ca;
+  border: none;
+}
+
+.styled__input > textarea {
+  font-size: 1.3rem;
+  padding: 0.5rem;
+  color: #43403e;
+  background-color: #d9d0ca;
+  border: none;
+  height: 8rem;
+}
