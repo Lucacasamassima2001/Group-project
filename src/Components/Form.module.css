@@ -6,3 +6,9 @@ form {
   flex-direction: column;
   gap: 2rem;
 }
+
+.buttons {
+  display: flex;
+  justify-content: end;
+  gap: 1rem;
+}

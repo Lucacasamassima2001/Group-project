@@ -6,7 +6,7 @@ export default function Sidebar() {
     <>
       <aside className={classes.sidebar}>
         <h2>Your Projects</h2>
-        <Button />
+        <Button style="buttonPrimary" text={"+ Add Project"} />
       </aside>
     </>
   );
