@@ -1,7 +1,7 @@
+/* eslint-disable react/prop-types */
 import Button from "./Button";
 import classes from "./Content.module.css";
-import Form from "./Form";
-export default function Content() {
+export default function Content({ onAdd }) {
   return (
     <>
       <div className={classes.content}>
@@ -9,10 +9,11 @@ export default function Content() {
           <img src="/public/no-projects.png" alt="" />
           <h2>No projects selected</h2>
           <h3>Select a project or get started with a new one</h3>
-          <Button />
-        </div>
-        <div>
-          <Form />
+          <Button
+            onClick={onAdd}
+            style="buttonPrimary"
+            text={"Create New Project"}
+          />
         </div>
       </div>
     </>

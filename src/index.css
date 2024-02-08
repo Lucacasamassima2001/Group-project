@@ -11,3 +11,10 @@ main {
   display: flex;
 }
 
+section {
+  margin-top: 20rem;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

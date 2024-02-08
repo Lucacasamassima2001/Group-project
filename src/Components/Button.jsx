@@ -1,9 +1,15 @@
+/* eslint-disable react/prop-types */
 import classes from "./Button.module.css";
 
-export default function Button({ text, style }) {
+export default function Button({ onClick, text, style }) {
   return (
     <>
-      <button className={`${classes.button} ${classes[style]}`}>{text}</button>
+      <button
+        onClick={onClick}
+        className={`${classes.button} ${classes[style]}`}
+      >
+        {text}
+      </button>
     </>
   );
 }
