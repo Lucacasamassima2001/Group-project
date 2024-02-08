@@ -1,0 +1,25 @@
+.button {
+  padding: 0.7rem;
+  border-radius: 7px;
+  border: none;
+  cursor: pointer;
+}
+
+.buttonPrimary {
+  background-color: #44403c;
+  color: #a6a09b;
+}
+.buttonPrimary:hover {
+  background-color: #dcd2ca;
+  color: #44403c;
+}
+
+.buttonSecondary {
+  background-color: transparent;
+  color: #5a5154;
+}
+
+.buttonSecondary:hover {
+  background-color: #a8a4a5;
+  color: rgb(246, 250, 250);
+}
