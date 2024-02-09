@@ -3,26 +3,38 @@ import classes from "./Form.module.css";
 import Button from "../Button/Button";
 import Input from "../Input/Input";
 import { useRef } from "react";
+import ErrorModal from "../Modal/ErrorModal";
 
 export default function Form({ onSave, onCancel }) {
   const title = useRef();
   const description = useRef();
   const date = useRef();
+  const dialog = useRef();
 
   function handleSave() {
     const enteredTitle = title.current.value;
     const enteredDescription = description.current.value;
     const enteredDate = date.current.value;
-    onSave({
-      title: enteredTitle,
-      description: enteredDescription,
-      date: enteredDate,
-      tasks: [],
-    });
+    if (
+      enteredTitle === "" ||
+      enteredDescription === "" ||
+      enteredDate === ""
+    ) {
+      dialog.current.open();
+      return;
+    } else {
+      onSave({
+        title: enteredTitle,
+        description: enteredDescription,
+        date: enteredDate,
+        tasks: [],
+      });
+    }
   }
   return (
     <>
-      <form>
+      <ErrorModal ref={dialog} />
+      <div className={classes.form}>
         <div className={classes.buttons}>
           <Button onClick={onCancel} text="Cancel" style="buttonSecondary" />
           <Button onClick={handleSave} text="Save" style="buttonPrimary" />
@@ -46,7 +58,7 @@ export default function Form({ onSave, onCancel }) {
           label={"DUE DATE"}
           type={"date"}
         />
-      </form>
+      </div>
     </>
   );
 }

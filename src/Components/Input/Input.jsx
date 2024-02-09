@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import classes from "./Input.module.css";
 import { forwardRef } from "react";
+
 const Input = forwardRef(function Input(
   { placeHolder, label, text, type },
   ref

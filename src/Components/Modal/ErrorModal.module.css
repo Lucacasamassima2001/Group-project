@@ -1,0 +1,27 @@
+dialog {
+  width: 600px;
+  height: 300px;
+  margin-left: 40%;
+  margin-top: 20%;
+  padding: 0.3rem;
+  border: 5px solid beige;
+  border-radius: 20px;
+}
+dialog > form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  font-size: 1.2rem;
+  color: #4c4845;
+}
+
+.button__modal {
+  width: 10rem;
+  font-size: 1rem;
+}
+
+.form__modal {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+}
