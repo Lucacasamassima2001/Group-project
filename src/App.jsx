@@ -10,6 +10,8 @@ function App() {
     projects: [],
   });
 
+  // show functions
+
   function showForm() {
     setManageProject((prev) => {
       return { ...prev, isAdding: null };
@@ -25,6 +27,8 @@ function App() {
     });
   }
 
+  // form functions
+
   function handleCreate(addedProject) {
     setManageProject((prev) => {
       const projectId = Math.random();
@@ -37,6 +41,14 @@ function App() {
       };
     });
   }
+
+  function handleCancel() {
+    setManageProject((prev) => {
+      return { ...prev, isAdding: undefined };
+    });
+  }
+
+  // tasks functions
 
   function handleCreateTask(addedTask) {
     setManageProject((prev) => {
@@ -69,6 +81,8 @@ function App() {
     });
   }
 
+  // delete project function
+
   function deleteProject() {
     setManageProject((prev) => {
       return {
@@ -95,7 +109,7 @@ function App() {
   );
 
   if (manageProject.isAdding === null) {
-    showed = <Form onSave={handleCreate} />;
+    showed = <Form onCancel={handleCancel} onSave={handleCreate} />;
   } else if (manageProject.isAdding === undefined) {
     showed = <Content onAdd={showForm} />;
   }

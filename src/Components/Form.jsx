@@ -4,7 +4,7 @@ import Button from "./Button";
 import Input from "./Input";
 import { useRef } from "react";
 
-export default function Form({ onSave }) {
+export default function Form({ onSave, onCancel }) {
   const title = useRef();
   const description = useRef();
   const date = useRef();
@@ -24,7 +24,7 @@ export default function Form({ onSave }) {
     <>
       <form>
         <div className={classes.buttons}>
-          <Button text="Cancel" style="buttonSecondary" />
+          <Button onClick={onCancel} text="Cancel" style="buttonSecondary" />
           <Button onClick={handleSave} text="Save" style="buttonPrimary" />
         </div>
         <Input
