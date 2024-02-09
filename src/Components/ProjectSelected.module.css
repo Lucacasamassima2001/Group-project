@@ -1,5 +1,6 @@
 .project {
   width: 100%;
+  margin: 5rem;
 }
 
 .projectHeader {
@@ -24,6 +25,5 @@
 
 .projectDesc {
   white-space: pre-wrap;
-
   color: rgb(84, 83, 83);
 }
