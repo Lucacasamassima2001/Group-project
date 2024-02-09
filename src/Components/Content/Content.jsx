@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import Button from "./Button";
+import Button from "../Button/Button";
 import classes from "./Content.module.css";
 export default function Content({ onAdd }) {
   return (

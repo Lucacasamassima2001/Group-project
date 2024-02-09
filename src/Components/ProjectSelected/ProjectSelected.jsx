@@ -1,8 +1,8 @@
 /* eslint-disable react/prop-types */
-import Button from "./Button";
+import Button from "../Button/Button";
 import classes from "./ProjectSelected.module.css";
-import Task from "./Task";
-import TaskForm from "./TaskForm";
+import Task from "../Task/Task";
+import TaskForm from "../TaskForm";
 
 export default function ProjectSelected({
   project,

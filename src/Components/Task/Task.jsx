@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import Button from "./Button";
+import Button from "../Button/Button";
 import classes from "./Task.module.css";
 export default function Task({ tasks, onDelete }) {
   return (

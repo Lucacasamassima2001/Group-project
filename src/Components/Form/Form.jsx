@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import classes from "./Form.module.css";
-import Button from "./Button";
-import Input from "./Input";
+import Button from "../Button/Button";
+import Input from "../Input/Input";
 import { useRef } from "react";
 
 export default function Form({ onSave, onCancel }) {

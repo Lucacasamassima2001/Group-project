@@ -1,9 +1,9 @@
 import { useState } from "react";
-import Content from "./Components/Content";
-import Sidebar from "./Components/Sidebar";
+import Content from "./Components/Content/Content";
+import Sidebar from "./Components/Sidebar/Sidebar";
 import "./index.css";
-import Form from "./Components/Form";
-import ProjectSelected from "./Components/ProjectSelected";
+import Form from "./Components/Form/Form";
+import ProjectSelected from "./Components/ProjectSelected/ProjectSelected";
 function App() {
   const [manageProject, setManageProject] = useState({
     isAdding: undefined,
