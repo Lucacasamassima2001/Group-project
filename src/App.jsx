@@ -16,6 +16,15 @@ function App() {
     });
   }
 
+  function showProject(id) {
+    setManageProject((prev) => {
+      return {
+        ...prev,
+        isAdding: id,
+      };
+    });
+  }
+
   function handleCreate(addedProject) {
     setManageProject((prev) => {
       const projectId = Math.random();
@@ -27,7 +36,6 @@ function App() {
         projects: [...prev.projects, newProject],
       };
     });
-    console.log(manageProject);
   }
 
   function handleCreateTask(addedTask) {
@@ -37,6 +45,8 @@ function App() {
           const taskId = Math.random();
           const newTask = { addedTask, id: taskId };
           return { ...project, tasks: [newTask, ...project.tasks] };
+        } else {
+          return project;
         }
       });
       console.log(updatedProjects);
@@ -55,17 +65,11 @@ function App() {
       };
     });
   }
-  function showProject(id) {
-    setManageProject((prev) => {
-      return {
-        ...prev,
-        isAdding: id,
-      };
-    });
-  }
+
   const showedProject = manageProject.projects.find(
     (project) => project.id === manageProject.isAdding
   );
+
   let showed = (
     <ProjectSelected
       onDelete={deleteProject}
@@ -73,6 +77,7 @@ function App() {
       onAddTask={handleCreateTask}
     />
   );
+
   if (manageProject.isAdding === null) {
     showed = <Form onSave={handleCreate} />;
   } else if (manageProject.isAdding === undefined) {
