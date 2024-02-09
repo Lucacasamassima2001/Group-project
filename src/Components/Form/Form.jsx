@@ -16,9 +16,9 @@ export default function Form({ onSave, onCancel }) {
     const enteredDescription = description.current.value;
     const enteredDate = date.current.value;
     if (
-      enteredTitle === "" ||
-      enteredDescription === "" ||
-      enteredDate === ""
+      enteredTitle.trim() === "" ||
+      enteredDescription.trim() === "" ||
+      enteredDate.trim() === ""
     ) {
       dialog.current.open();
       return;

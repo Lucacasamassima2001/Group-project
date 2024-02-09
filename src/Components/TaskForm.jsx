@@ -8,7 +8,7 @@ export default function TaskForm({ onSave }) {
   const dialog = useRef();
   const newTask = useRef();
   function handleSaveTask() {
-    if (newTask.current.value === "") {
+    if (newTask.current.value.trim() === "") {
       dialog.current.open();
       return;
     } else {
