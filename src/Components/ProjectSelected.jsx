@@ -4,7 +4,12 @@ import classes from "./ProjectSelected.module.css";
 import Task from "./Task";
 import TaskForm from "./TaskForm";
 
-export default function ProjectSelected({ project, onDelete, onAddTask }) {
+export default function ProjectSelected({
+  project,
+  onDelete,
+  onAddTask,
+  onDeleteTask,
+}) {
   return (
     <div className={classes.project} id={project.id}>
       <header className={classes.projectHeader}>
@@ -18,7 +23,7 @@ export default function ProjectSelected({ project, onDelete, onAddTask }) {
       <div>
         <TaskForm onSave={onAddTask} />
       </div>
-      <Task tasks={project.tasks} />
+      <Task onDelete={onDeleteTask} tasks={project.tasks} />
     </div>
   );
 }

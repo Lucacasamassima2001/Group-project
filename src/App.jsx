@@ -49,7 +49,22 @@ function App() {
           return project;
         }
       });
-      console.log(updatedProjects);
+      return { ...prev, projects: updatedProjects };
+    });
+  }
+
+  function handleDeleteTask(taskId) {
+    setManageProject((prev) => {
+      const updatedProjects = prev.projects.map((project) => {
+        if (project.id === prev.isAdding) {
+          return {
+            ...project,
+            tasks: project.tasks.filter((task) => task.id !== taskId),
+          };
+        } else {
+          return project;
+        }
+      });
       return { ...prev, projects: updatedProjects };
     });
   }
@@ -75,6 +90,7 @@ function App() {
       onDelete={deleteProject}
       project={showedProject}
       onAddTask={handleCreateTask}
+      onDeleteTask={handleDeleteTask}
     />
   );
 

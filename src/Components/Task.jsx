@@ -1,8 +1,7 @@
 /* eslint-disable react/prop-types */
 import Button from "./Button";
 import classes from "./Task.module.css";
-
-export default function Task({ tasks }) {
+export default function Task({ tasks, onDelete }) {
   return (
     <div>
       {tasks.length > 0 ? (
@@ -10,7 +9,11 @@ export default function Task({ tasks }) {
           {tasks.map((task) => (
             <li key={task.id}>
               <span>{task.addedTask}</span>
-              <Button text={"Clear"} style={"buttonSecondary"} />
+              <Button
+                onClick={() => onDelete(task.id)}
+                text={"Clear"}
+                style={"buttonSecondary"}
+              />
             </li>
           ))}
         </ul>
