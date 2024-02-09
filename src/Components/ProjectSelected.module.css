@@ -1,0 +1,29 @@
+.project {
+  width: 100%;
+}
+
+.projectHeader {
+  border-bottom: 1px solid rgb(84, 83, 83);
+}
+
+.projectContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.projectContainer h1 {
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.projectDate {
+  margin-bottom: 2rem;
+  color: rgb(126, 123, 123);
+}
+
+.projectDesc {
+  white-space: pre-wrap;
+
+  color: rgb(84, 83, 83);
+}
