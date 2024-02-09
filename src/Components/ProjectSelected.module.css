@@ -27,3 +27,9 @@
   white-space: pre-wrap;
   color: rgb(84, 83, 83);
 }
+
+.tasks {
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+}

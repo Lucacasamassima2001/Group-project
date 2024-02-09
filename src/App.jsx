@@ -13,18 +13,48 @@ function App() {
         description: "my project",
         date: "24/06/3023",
         id: "43213",
+        tasks: [
+          {
+            id: "1",
+            name: "Task 1",
+          },
+          {
+            id: "2",
+            name: "Task 2",
+          },
+        ],
       },
       {
         title: "Second Project",
         description: "My second React Project",
         date: "11/10/1056",
         id: "62314",
+        tasks: [
+          {
+            id: "1",
+            name: "Task 1",
+          },
+          {
+            id: "2",
+            name: "Task 2",
+          },
+          {
+            id: "3",
+            name: "Task 3",
+          },
+        ],
       },
       {
         title: "Third Project",
         description: "My Third React Project",
         date: "06/08/2012",
         id: "12312",
+        tasks: [
+          {
+            id: "1",
+            name: "Task 1",
+          },
+        ],
       },
     ],
     selectedProject: undefined,
@@ -52,12 +82,13 @@ function App() {
     let showedProject = manageProject.projects.filter(
       (project) => project.id === e
     );
+    console.log(showedProject[0].id);
+
     setManageProject({
       ...manageProject,
       isAdding: false,
       selectedProject: showedProject,
     });
-    console.log(showedProject);
   };
 
   if (manageProject.isAdding === true) {

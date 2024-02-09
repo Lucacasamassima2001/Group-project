@@ -10,7 +10,14 @@
   font-size: 1.3rem;
 }
 
-.styled__input > input {
+.styled__input > .boldLabel {
+  color: #4c4845;
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+.styled__input__task > input {
+  width: 100%;
   font-size: 1.3rem;
   padding: 0.5rem;
   height: 3rem;
@@ -19,11 +26,22 @@
   border: none;
 }
 
-.styled__input > textarea {
+.styled__input__task > textarea {
+  width: 100%;
   font-size: 1.3rem;
   padding: 0.5rem;
   color: #43403e;
   background-color: #d9d0ca;
   border: none;
   height: 8rem;
+}
+.styled__input__task {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.styled__input__task > button {
+  width: 10rem;
+  font-size: 1.3rem;
 }
