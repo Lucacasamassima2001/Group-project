@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import Button from "./Button";
 import classes from "./Sidebar.module.css";
-export default function Sidebar({ onAdd, projects }) {
+export default function Sidebar({ onAdd, onShow, projects }) {
   return (
     <>
       <aside className={classes.sidebar}>
@@ -9,8 +9,10 @@ export default function Sidebar({ onAdd, projects }) {
         <Button onClick={onAdd} style="buttonPrimary" text={"+ Add Project"} />
         <ul>
           {projects
-            ? projects.map((project) => (
-                <li key={project.id}>{project.title}</li>
+            ? projects.map((project, index) => (
+                <li id={project.id} onClick={onShow} key={index}>
+                  {project.title}
+                </li>
               ))
             : undefined}
         </ul>
