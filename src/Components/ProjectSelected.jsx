@@ -1,7 +1,8 @@
 /* eslint-disable react/prop-types */
 import Button from "./Button";
-import Input from "./Input";
 import classes from "./ProjectSelected.module.css";
+import Task from "./Task";
+import TaskForm from "./TaskForm";
 
 export default function ProjectSelected({ project, onDelete, onAddTask }) {
   return (
@@ -14,14 +15,10 @@ export default function ProjectSelected({ project, onDelete, onAddTask }) {
         <p className={classes.projectDate}>{project.date}</p>
         <p className={classes.projectDesc}>{project.description}</p>
       </header>
-      <div className={classes.tasks}>
-        <Input
-          label={"Tasks"}
-          onClick={onAddTask}
-          button
-          buttonText={"add new task"}
-        />
+      <div>
+        <TaskForm onSave={onAddTask} />
       </div>
+      <Task tasks={project.tasks} />
     </div>
   );
 }

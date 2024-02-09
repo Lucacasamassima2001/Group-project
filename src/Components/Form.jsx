@@ -17,6 +17,7 @@ export default function Form({ onSave }) {
       title: enteredTitle,
       description: enteredDescription,
       date: enteredDate,
+      tasks: [],
     });
   }
   return (

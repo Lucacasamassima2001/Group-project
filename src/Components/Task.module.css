@@ -1,0 +1,14 @@
+.tasks__list {
+  margin-top: 2rem;
+  list-style: none;
+  font-size: 1.2rem;
+  background-color: beige;
+}
+
+.tasks__list > li {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 4rem;
+  padding: 0.5rem;
+}

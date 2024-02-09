@@ -7,27 +7,7 @@ import ProjectSelected from "./Components/ProjectSelected";
 function App() {
   const [manageProject, setManageProject] = useState({
     isAdding: undefined,
-    projects: [
-      {
-        title: "Project",
-        description: "my project",
-        date: "24/06/3023",
-        id: "43213",
-      },
-      {
-        title: "Second Project",
-        description: "My second React Project",
-        date: "11/10/1056",
-        id: "62314",
-      },
-      {
-        title: "Third Project",
-        description: "My Third React Project",
-        date: "06/08/2012",
-        id: "12312",
-      },
-    ],
-    selectedProject: undefined,
+    projects: [],
   });
 
   function showForm() {
@@ -47,6 +27,21 @@ function App() {
         projects: [...prev.projects, newProject],
       };
     });
+    console.log(manageProject);
+  }
+
+  function handleCreateTask(addedTask) {
+    setManageProject((prev) => {
+      const updatedProjects = prev.projects.map((project) => {
+        if (project.id === prev.isAdding) {
+          const taskId = Math.random();
+          const newTask = { addedTask, id: taskId };
+          return { ...project, tasks: [newTask, ...project.tasks] };
+        }
+      });
+      console.log(updatedProjects);
+      return { ...prev, projects: updatedProjects };
+    });
   }
 
   function deleteProject() {
@@ -60,25 +55,22 @@ function App() {
       };
     });
   }
-
-  const showProject = (e) => {
-    let showedProject = manageProject.projects.find(
-      (project) => project.id === e
-    );
-
+  function showProject(id) {
     setManageProject((prev) => {
       return {
         ...prev,
-        isAdding: showedProject.id,
-        selectedProject: showedProject,
+        isAdding: id,
       };
     });
-  };
-
+  }
+  const showedProject = manageProject.projects.find(
+    (project) => project.id === manageProject.isAdding
+  );
   let showed = (
     <ProjectSelected
       onDelete={deleteProject}
-      project={manageProject.selectedProject}
+      project={showedProject}
+      onAddTask={handleCreateTask}
     />
   );
   if (manageProject.isAdding === null) {
@@ -86,6 +78,7 @@ function App() {
   } else if (manageProject.isAdding === undefined) {
     showed = <Content onAdd={showForm} />;
   }
+
   return (
     <>
       <main>

@@ -1,0 +1,10 @@
+.tasks__input__container {
+  margin-top: 2rem;
+  display: flex;
+  gap: 2rem;
+}
+
+.task__button {
+  display: flex;
+  align-items: end;
+}

@@ -16,7 +16,11 @@ export default function Sidebar({ onAdd, onShow, projects }) {
         <ul>
           {projects
             ? projects.map((project) => (
-                <li key={project.id} onClick={() => onShow(project.id)}>
+                <li
+                  className={classes.sidebar__listItem}
+                  key={project.id}
+                  onClick={() => onShow(project.id)}
+                >
                   {project.title}
                 </li>
               ))

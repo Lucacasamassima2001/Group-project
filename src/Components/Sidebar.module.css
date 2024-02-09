@@ -16,12 +16,9 @@
   text-transform: uppercase;
 }
 
-
 .sidebar div {
   margin-left: 2rem;
 }
-
-
 
 .sidebar > ul {
   padding: 1rem;
@@ -34,11 +31,11 @@
   gap: 2rem;
 }
 
-li {
+.sidebar__listItem {
   padding: 0.3rem;
 }
 
-li:hover {
+.sidebar__listItem:hover {
   background-color: beige;
   color: black;
   cursor: pointer;
