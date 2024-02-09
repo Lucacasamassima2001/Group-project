@@ -50,13 +50,14 @@ function App() {
 
   const showProject = (e) => {
     let showedProject = manageProject.projects.filter(
-      (project) => project.id === e.target.id
+      (project) => project.id === e
     );
     setManageProject({
       ...manageProject,
       isAdding: false,
       selectedProject: showedProject,
     });
+    console.log(showedProject);
   };
 
   if (manageProject.isAdding === true) {
