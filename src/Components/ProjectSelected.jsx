@@ -22,11 +22,6 @@ export default function ProjectSelected({ project, onDelete, onAddTask }) {
           buttonText={"add new task"}
         />
       </div>
-      <div className="tasks">
-        {project.tasks.map((task, index) => (
-          <h1 key={index}>{task.name}</h1>
-        ))}
-      </div>
     </div>
   );
 }

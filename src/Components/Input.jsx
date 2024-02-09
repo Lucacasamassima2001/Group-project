@@ -1,8 +1,11 @@
 /* eslint-disable react/prop-types */
 import Button from "./Button";
 import classes from "./Input.module.css";
-
-export default function Input({ placeHolder, label, text, type, button }) {
+import { forwardRef } from "react";
+const Input = forwardRef(function Input(
+  { placeHolder, label, text, type, button },
+  ref
+) {
   return (
     <>
       <div className={classes.styled__input}>
@@ -11,9 +14,14 @@ export default function Input({ placeHolder, label, text, type, button }) {
         </label>
         <div className={classes.styled__input__task}>
           {text ? (
-            <textarea placeholder={placeHolder}></textarea>
+            <textarea ref={ref} placeholder={placeHolder}></textarea>
           ) : (
-            <input name={"task"} placeholder={placeHolder} type={type} />
+            <input
+              ref={ref}
+              name={"task"}
+              placeholder={placeHolder}
+              type={type}
+            />
           )}
           {button ? (
             <Button text={"Add task"} style={"buttonSecondary"} />
@@ -22,4 +30,6 @@ export default function Input({ placeHolder, label, text, type, button }) {
       </div>
     </>
   );
-}
+});
+
+export default Input;

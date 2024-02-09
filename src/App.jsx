@@ -13,94 +13,77 @@ function App() {
         description: "my project",
         date: "24/06/3023",
         id: "43213",
-        tasks: [
-          {
-            id: "1",
-            name: "Task 1",
-          },
-          {
-            id: "2",
-            name: "Task 2",
-          },
-        ],
       },
       {
         title: "Second Project",
         description: "My second React Project",
         date: "11/10/1056",
         id: "62314",
-        tasks: [
-          {
-            id: "1",
-            name: "Task 1",
-          },
-          {
-            id: "2",
-            name: "Task 2",
-          },
-          {
-            id: "3",
-            name: "Task 3",
-          },
-        ],
       },
       {
         title: "Third Project",
         description: "My Third React Project",
         date: "06/08/2012",
         id: "12312",
-        tasks: [
-          {
-            id: "1",
-            name: "Task 1",
-          },
-        ],
       },
     ],
     selectedProject: undefined,
   });
-  let showed;
 
   function showForm() {
-    setManageProject({ ...manageProject, isAdding: true });
+    setManageProject((prev) => {
+      return { ...prev, isAdding: null };
+    });
   }
 
-  function deleteProject(deletingProject) {
-    const arr = manageProject.projects.filter(
-      (project) => project !== deletingProject
-    );
+  function handleCreate(addedProject) {
+    setManageProject((prev) => {
+      const projectId = Math.random();
+      const newProject = { ...addedProject, id: projectId };
 
-    setManageProject({
-      ...manageProject,
-      projects: arr,
-      selectedProject: {},
-      isAdding: undefined,
+      return {
+        ...prev,
+        isAdding: undefined,
+        projects: [...prev.projects, newProject],
+      };
+    });
+  }
+
+  function deleteProject() {
+    setManageProject((prev) => {
+      return {
+        ...prev,
+        projects: prev.projects.filter(
+          (project) => project.id !== prev.isAdding
+        ),
+        isAdding: undefined,
+      };
     });
   }
 
   const showProject = (e) => {
-    let showedProject = manageProject.projects.filter(
+    let showedProject = manageProject.projects.find(
       (project) => project.id === e
     );
-    console.log(showedProject[0].id);
 
-    setManageProject({
-      ...manageProject,
-      isAdding: false,
-      selectedProject: showedProject,
+    setManageProject((prev) => {
+      return {
+        ...prev,
+        isAdding: showedProject.id,
+        selectedProject: showedProject,
+      };
     });
   };
 
-  if (manageProject.isAdding === true) {
-    showed = <Form />;
-  } else if (manageProject.isAdding === false) {
-    showed = (
-      <ProjectSelected
-        onDelete={() => deleteProject(manageProject.selectedProject[0])}
-        project={manageProject.selectedProject[0]}
-      />
-    );
-  } else {
+  let showed = (
+    <ProjectSelected
+      onDelete={deleteProject}
+      project={manageProject.selectedProject}
+    />
+  );
+  if (manageProject.isAdding === null) {
+    showed = <Form onSave={handleCreate} />;
+  } else if (manageProject.isAdding === undefined) {
     showed = <Content onAdd={showForm} />;
   }
   return (
