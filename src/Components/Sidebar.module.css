@@ -9,18 +9,37 @@
 
 .sidebar h2 {
   margin-top: 2rem;
+
   margin-bottom: 2rem;
+
   color: white;
   text-transform: uppercase;
 }
 
+
 .sidebar div {
   margin-left: 2rem;
 }
+
+
 
 .sidebar > ul {
   padding: 1rem;
   font-size: 1.5rem;
   color: white;
   list-style: none;
+
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+li {
+  padding: 0.3rem;
+}
+
+li:hover {
+  background-color: beige;
+  color: black;
+  cursor: pointer;
 }
