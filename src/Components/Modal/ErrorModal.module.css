@@ -30,6 +30,10 @@ dialog > .modal__container {
   animation: slide-in-from-top 0.35s ease-out;
 }
 
+.ErrorModal::backdrop {
+  background: rgba(0, 0, 0, 0.7);
+}
+
 @keyframes slide-in-from-top {
   0% {
     transform: translateY(50%);
