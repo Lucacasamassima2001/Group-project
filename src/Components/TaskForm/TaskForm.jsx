@@ -4,7 +4,7 @@ import Button from "../Button/Button";
 import Input from "../Input/Input";
 import { useRef } from "react";
 import ErrorModal from "../Modal/ErrorModal";
-export default function TaskForm({ onSave }) {
+export default function TaskForm({ onSave, data }) {
   const dialog = useRef();
   const newTask = useRef();
   function handleSaveTask() {
@@ -20,7 +20,12 @@ export default function TaskForm({ onSave }) {
   return (
     <div className={classes.tasks__input__container}>
       <ErrorModal ref={dialog} />
-      <Input ref={newTask} label={"Tasks"} />
+      <Input
+        data={data}
+        placeHolder={data.tasks.length === 0 ? "Add Task" : "Add another Task"}
+        ref={newTask}
+        label={"Tasks"}
+      />
       <div className={classes.task__button}>
         <Button
           onClick={handleSaveTask}

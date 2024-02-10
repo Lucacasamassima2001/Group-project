@@ -21,7 +21,7 @@ export default function ProjectSelected({
         <p className={classes.projectDesc}>{project.description}</p>
       </header>
       <div>
-        <TaskForm onSave={onAddTask} />
+        <TaskForm data={project} onSave={onAddTask} />
       </div>
       <Task onDelete={onDeleteTask} tasks={project.tasks} />
     </div>

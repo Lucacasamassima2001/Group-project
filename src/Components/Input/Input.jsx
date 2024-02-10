@@ -3,7 +3,7 @@ import classes from "./Input.module.css";
 import { forwardRef } from "react";
 
 const Input = forwardRef(function Input(
-  { placeHolder, label, text, type },
+  { placeHolder, label, text, type, data },
   ref
 ) {
   return (
@@ -15,6 +15,7 @@ const Input = forwardRef(function Input(
             <textarea ref={ref} placeholder={placeHolder}></textarea>
           ) : (
             <input
+              data={data}
               ref={ref}
               name={"task"}
               placeholder={placeHolder}
