@@ -14,6 +14,7 @@ export default function TaskForm({ onSave }) {
     } else {
       const enteredTask = newTask.current.value;
       onSave(enteredTask);
+      newTask.current.value = "";
     }
   }
   return (
