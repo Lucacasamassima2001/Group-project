@@ -1,9 +1,9 @@
 /* eslint-disable react/prop-types */
 import classes from "./TaskForm.module.css";
-import Button from "./Button/Button";
-import Input from "./Input/Input";
+import Button from "../Button/Button";
+import Input from "../Input/Input";
 import { useRef } from "react";
-import ErrorModal from "./Modal/ErrorModal";
+import ErrorModal from "../Modal/ErrorModal";
 export default function TaskForm({ onSave }) {
   const dialog = useRef();
   const newTask = useRef();

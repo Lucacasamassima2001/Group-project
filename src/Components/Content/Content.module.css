@@ -1,9 +1,10 @@
 .no__project {
+  margin-top: 50%;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 2rem;
-  font-size: 1.5rem;
+  font-size: 2rem;
 }
 
 .no__project > img {
@@ -11,9 +12,9 @@
 }
 
 .no__project > h2 {
-  color: #706a66;
+  color: var(--primaryColor);
 }
 
 .no__project > h3 {
-  color: #c1b1a6;
+  color: var(--secondaryColor);
 }

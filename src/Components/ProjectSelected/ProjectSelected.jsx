@@ -2,7 +2,7 @@
 import Button from "../Button/Button";
 import classes from "./ProjectSelected.module.css";
 import Task from "../Task/Task";
-import TaskForm from "../TaskForm";
+import TaskForm from "../TaskForm/TaskForm";
 
 export default function ProjectSelected({
   project,

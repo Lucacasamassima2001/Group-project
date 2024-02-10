@@ -14,14 +14,14 @@ const ErrorModal = forwardRef(function ResultModal({ onReset }, ref) {
   });
   return createPortal(
     <dialog className="result-modal" ref={dialog} onClose={onReset}>
-      <form onSubmit={onReset}>
+      <div className={classes.modal__container} onSubmit={onReset}>
         <h2>Invalid Input</h2>
         <p>Oops... looks like you forgot to enter a value.</p>
         <p>Please make sure you provide a valid value for every input field.</p>
         <form className={classes.form__modal} method="dialog">
           <Button text={"Okay"} style={"buttonPrimary"} />
         </form>
-      </form>
+      </div>
     </dialog>,
     document.getElementById("modal")
   );

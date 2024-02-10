@@ -33,10 +33,12 @@
 
 .sidebar__listItem {
   padding: 0.3rem;
+  transition: 0.5s linear;
 }
 
 .sidebar__listItem:hover {
-  background-color: beige;
-  color: black;
+  background-color: var(--tertiaryColor);
+  color: var(--primaryColor);
   cursor: pointer;
+  border-radius: 20px;
 }

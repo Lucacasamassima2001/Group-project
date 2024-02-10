@@ -4,28 +4,30 @@
 }
 
 .projectHeader {
-  border-bottom: 1px solid rgb(84, 83, 83);
+  border-bottom: 1px solid var(--primaryColor);
 }
 
 .projectContainer {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  font-size: 1.8rem;
 }
 
 .projectContainer h1 {
   margin-bottom: 1rem;
   font-weight: bold;
+  color: var(--primaryColor);
 }
 
 .projectDate {
   margin-bottom: 2rem;
-  color: rgb(126, 123, 123);
+  color: var(--primaryColor);
 }
 
 .projectDesc {
   white-space: pre-wrap;
-  color: rgb(84, 83, 83);
+  color: var(--primaryColor);
 }
 
 .tasks {

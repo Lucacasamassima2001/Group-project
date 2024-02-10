@@ -18,7 +18,9 @@ export default function Task({ tasks, onDelete }) {
           ))}
         </ul>
       ) : (
-        <p>This project does not have any tasks yet</p>
+        <p className={classes.no__tasks}>
+          This project does not have any tasks yet
+        </p>
       )}
     </div>
   );

@@ -4,15 +4,15 @@ dialog {
   margin-left: 40%;
   margin-top: 20%;
   padding: 0.3rem;
-  border: 5px solid beige;
+  border: 5px solid var(--tertiaryColor);
   border-radius: 20px;
 }
-dialog > form {
+dialog > .modal__container {
   display: flex;
   flex-direction: column;
   gap: 2rem;
   font-size: 1.2rem;
-  color: #4c4845;
+  color: var(--primaryColor);
 }
 
 .button__modal {

@@ -5,13 +5,13 @@
 }
 
 .styled__input > label {
-  color: #4c4845;
+  color: var(--primaryColor);
   font-weight: bold;
   font-size: 1.3rem;
 }
 
 .styled__input > .boldLabel {
-  color: #4c4845;
+  color: var(--primaryColor);
   font-weight: bold;
   font-size: 2rem;
 }
@@ -21,8 +21,8 @@
   font-size: 1.3rem;
   padding: 0.5rem;
   height: 3rem;
-  color: #43403e;
-  background-color: #d9d0ca;
+  color: var(--primaryColor);
+  background-color: var(--tertiaryColor);
   border: none;
 }
 
@@ -30,8 +30,8 @@
   width: 100%;
   font-size: 1.3rem;
   padding: 0.5rem;
-  color: #43403e;
-  background-color: #d9d0ca;
+  color: var(--primaryColor);
+  background-color: var(--tertiaryColor);
   border: none;
   height: 8rem;
 }

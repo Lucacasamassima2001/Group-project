@@ -6,20 +6,22 @@
 }
 
 .buttonPrimary {
-  background-color: #44403c;
-  color: #a6a09b;
+  background-color: var(--primaryColor);
+  color: var(--secondaryColor);
+  transition: 0.2s linear;
 }
 .buttonPrimary:hover {
-  background-color: #dcd2ca;
-  color: #44403c;
+  background-color: var(--secondaryColor);
+  color: var(--primaryColor);
 }
 
 .buttonSecondary {
   background-color: transparent;
-  color: #5a5154;
+  color: var(--primaryColor);
+  transition: 0.2s linear;
 }
 
 .buttonSecondary:hover {
-  background-color: #a8a4a5;
-  color: rgb(246, 250, 250);
+  background-color: var(--secondaryColor);
+  color: white;
 }
