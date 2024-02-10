@@ -42,3 +42,21 @@
   cursor: pointer;
   border-radius: 20px;
 }
+
+.no__projects {
+  font-size: 1.5rem;
+  color: var(--tertiaryColor);
+  animation: pulse 3s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    color: var(--tertiaryColor);
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    color: var(--tertiaryColor);
+  }
+}

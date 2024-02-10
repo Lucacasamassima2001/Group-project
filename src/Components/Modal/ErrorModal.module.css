@@ -1,4 +1,4 @@
-dialog {
+.ErrorModal {
   width: 600px;
   height: 300px;
   margin-left: 40%;
@@ -24,4 +24,19 @@ dialog > .modal__container {
   width: 100%;
   display: flex;
   justify-content: end;
+}
+
+.ErrorModal[open] {
+  animation: slide-in-from-top 0.35s ease-out;
+}
+
+@keyframes slide-in-from-top {
+  0% {
+    transform: translateY(50%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }

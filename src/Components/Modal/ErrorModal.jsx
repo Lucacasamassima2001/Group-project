@@ -13,7 +13,7 @@ const ErrorModal = forwardRef(function ResultModal({ onReset }, ref) {
     };
   });
   return createPortal(
-    <dialog className="result-modal" ref={dialog} onClose={onReset}>
+    <dialog className={classes.ErrorModal} ref={dialog} onClose={onReset}>
       <div className={classes.modal__container} onSubmit={onReset}>
         <h2>Invalid Input</h2>
         <p>Oops... looks like you forgot to enter a value.</p>

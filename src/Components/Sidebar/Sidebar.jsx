@@ -26,6 +26,9 @@ export default function Sidebar({ onAdd, onShow, projects }) {
               ))
             : undefined}
         </ul>
+        {projects.length === 0 ? (
+          <p className={classes.no__projects}>No projects available.</p>
+        ) : undefined}
       </aside>
     </>
   );
