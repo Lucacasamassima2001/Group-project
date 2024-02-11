@@ -34,6 +34,18 @@
 .sidebar__listItem {
   padding: 0.3rem;
   transition: 0.5s linear;
+  animation: slide-in-from-bottom 0.35s ease-out;
+}
+
+@keyframes slide-in-from-bottom {
+  0% {
+    transform: translateY(50%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 .sidebar__listItem:hover {
