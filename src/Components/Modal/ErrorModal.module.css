@@ -3,11 +3,12 @@
   height: 300px;
   margin-left: 40%;
   margin-top: 20%;
-  padding: 0.3rem;
+  padding: 0.6rem;
   border: 5px solid var(--tertiaryColor);
   border-radius: 20px;
 }
 dialog > .modal__container {
+  margin-inline: 0.4rem;
   display: flex;
   flex-direction: column;
   gap: 2rem;
