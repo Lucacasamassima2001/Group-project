@@ -6,7 +6,7 @@ import Form from "./Components/Form/Form";
 import ProjectSelected from "./Components/ProjectSelected/ProjectSelected";
 function App() {
   const [manageProject, setManageProject] = useState({
-    isAdding: undefined,
+    projectId: undefined,
     projects: [],
   });
 
@@ -14,7 +14,7 @@ function App() {
 
   function showForm() {
     setManageProject((prev) => {
-      return { ...prev, isAdding: null };
+      return { ...prev, projectId: null };
     });
   }
 
@@ -22,7 +22,7 @@ function App() {
     setManageProject((prev) => {
       return {
         ...prev,
-        isAdding: id,
+        projectId: id,
       };
     });
   }
@@ -36,7 +36,7 @@ function App() {
 
       return {
         ...prev,
-        isAdding: undefined,
+        projectId: undefined,
         projects: [...prev.projects, newProject],
       };
     });
@@ -44,7 +44,7 @@ function App() {
 
   function handleCancel() {
     setManageProject((prev) => {
-      return { ...prev, isAdding: undefined };
+      return { ...prev, projectId: undefined };
     });
   }
 
@@ -53,7 +53,7 @@ function App() {
   function handleCreateTask(addedTask) {
     setManageProject((prev) => {
       const updatedProjects = prev.projects.map((project) => {
-        if (project.id === prev.isAdding) {
+        if (project.id === prev.projectId) {
           const taskId = Math.random();
           const newTask = { addedTask, id: taskId };
           return { ...project, tasks: [newTask, ...project.tasks] };
@@ -68,7 +68,7 @@ function App() {
   function handleDeleteTask(taskId) {
     setManageProject((prev) => {
       const updatedProjects = prev.projects.map((project) => {
-        if (project.id === prev.isAdding) {
+        if (project.id === prev.projectId) {
           return {
             ...project,
             tasks: project.tasks.filter((task) => task.id !== taskId),
@@ -88,15 +88,15 @@ function App() {
       return {
         ...prev,
         projects: prev.projects.filter(
-          (project) => project.id !== prev.isAdding
+          (project) => project.id !== prev.projectId
         ),
-        isAdding: undefined,
+        projectId: undefined,
       };
     });
   }
 
   const showedProject = manageProject.projects.find(
-    (project) => project.id === manageProject.isAdding
+    (project) => project.id === manageProject.projectId
   );
 
   let showed = (
@@ -108,9 +108,9 @@ function App() {
     />
   );
 
-  if (manageProject.isAdding === null) {
+  if (manageProject.projectId === null) {
     showed = <Form onCancel={handleCancel} onSave={handleCreate} />;
-  } else if (manageProject.isAdding === undefined) {
+  } else if (manageProject.projectId === undefined) {
     showed = <Content onAdd={showForm} />;
   }
 
